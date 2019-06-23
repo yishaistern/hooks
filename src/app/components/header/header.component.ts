@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   private configArr = [
-    {title: 'a', link: '/b'},
+    {title: 'onInit', link: '/init'},
     {title: 'b', link: '/b'},
     {title: 'c', link: '/b'},
-    {title: 'd', link: '/b'},
+    {title: 'onChanges', link: '/change'},
     {title: 'e', link: '/b'},
     {title: 'f', link: '/b'},
     {title: 'g', link: '/b'},
