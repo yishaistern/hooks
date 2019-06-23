@@ -26,7 +26,7 @@ export const initialState: State = adapter.getInitialState({
     selectedLog: null,
  });
 
-const logReducer = createReducer(initialState,
+export const logReducer = createReducer(initialState,
     on(logActions.clearLog, (state, {}) => {
         return adapter.removeAll(state);
     }),

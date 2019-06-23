@@ -8,7 +8,7 @@ import { Store } from '@ngrx/store';
 })
 export class InitComponent implements OnInit {
 
-  constructor(private store: Store<{ count: number }>) { }
+  constructor(private store: Store<any>) { }
 
   ngOnInit() {
   }
