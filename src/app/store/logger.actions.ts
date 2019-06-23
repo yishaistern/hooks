@@ -13,8 +13,13 @@ export const emptyLog = createAction(
   '[Log Action] empty'
 );
 
+export const createLog = createAction(
+  '[Log Action] add',
+  props<{console: string}>()
+);
+
 
 export const addLog = createAction(
   '[Log Action] add',
-  props<{console: string}>()
+  props<{console: string, timestamp: number}>()
 );
