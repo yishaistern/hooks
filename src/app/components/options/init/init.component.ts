@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-init',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InitComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<{ count: number }>) { }
 
   ngOnInit() {
   }
