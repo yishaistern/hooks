@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { LogState } from '../../../store/states';
 
 @Component({
   selector: 'app-init',
@@ -8,7 +9,7 @@ import { Store } from '@ngrx/store';
 })
 export class InitComponent implements OnInit {
 
-  constructor(private store: Store<any>) { }
+  constructor(private store: Store<LogState>) { }
 
   ngOnInit() {
   }
