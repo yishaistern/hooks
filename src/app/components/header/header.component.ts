@@ -3,7 +3,7 @@ import { Store, select } from '@ngrx/store';
 import { LogState, AppState } from '../../store/states';
 import { Subscription, Observable } from 'rxjs';
 import * as fromRoot from '../../store/logger.reducer';
-
+import * as actions from '../../store/logger.actions';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -26,6 +26,10 @@ export class HeaderComponent implements OnInit {
   state: Observable<LogState>;
   ngOnInit() {
     this.state = this.store.pipe(select(fromRoot.selectFeatureCount));
+  }
+
+  route(link) {
+    this.store.dispatch(actions.routePage({tittle: link}));
   }
 
 }

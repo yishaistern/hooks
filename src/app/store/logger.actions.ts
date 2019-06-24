@@ -9,8 +9,14 @@ export const clearLog = createAction(
   '[Log Action] clear'
 );
 
+export const clearLogAndChngeTitle = createAction(
+  '[Log Action] clear title',
+  props<{tittle: string}>()
+);
+
 export const routePage = createAction(
-  '[Log Action] routePage'
+  '[Log Action] routePage',
+  props<{tittle: string}>()
 );
 
 export const createLog = createAction(

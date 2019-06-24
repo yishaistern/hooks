@@ -1,6 +1,6 @@
 <header class="header">
     <div *ngFor="let item of configArr">
-        <button  type="button" class="btn btn-primary"><a routerLink="{{item.link}}">{{item.title}}</a></button>
+        <button  type="button" class="btn btn-primary"><a routerLink="{{item.link}}" (click)="route(item.title)">{{item.title}}</a></button>
     </div>
 </header>
-<div class="title">{{title}}</div>
+<h1 class="bd-title">{{(state | async).selectedLog }}</h1>

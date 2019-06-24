@@ -31,6 +31,10 @@ export const logReducer = createReducer(initialState,
     on(logActions.clearLog, (state, {}) => {
         return adapter.removeAll(state);
     }),
+    on(logActions.clearLogAndChngeTitle, (state, prop) => {
+        state.selectedLog = prop.tittle;
+        return adapter.removeAll(state);
+    }),
         on(logActions.addLog, (state, item: logActions.LogItem) => {
         return adapter.addOne(item, state);
     }));

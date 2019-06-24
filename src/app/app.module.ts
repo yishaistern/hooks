@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { InitComponent } from './components/options/init/init.component';
 import { ChangesComponent } from './components/options/changes/changes.component';
-import { StoreModule } from '@ngrx/store';
+import { StoreModule,  } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 import { logReducer } from './store/logger.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { LogEffects } from './store/looger.effects';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +22,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({ log: logReducer }),
+    EffectsModule.forRoot([LogEffects]),
     StoreDevtoolsModule.instrument(),
   ],
   providers: [],
