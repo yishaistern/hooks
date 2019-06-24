@@ -1,3 +1,5 @@
 <header class="header">
-    <button *ngFor="let iteom of configArr" type="button" class="btn btn-primary"><a  routerLink="item.link">{{item.title}}</a></button>
+    <div *ngFor="let item of configArr">
+        <button  type="button" class="btn btn-primary"><a routerLink="{{item.link}}">{{item.title}}</a></button>
+    </div>
 </header>
