@@ -12,13 +12,15 @@ import { logReducer } from './store/logger.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { LogEffects } from './store/looger.effects';
 import { LoogerComponent } from './components/footer/looger/looger.component';
+import { SimpleComponent } from './components/options/init/simple/simple.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     InitComponent,
     ChangesComponent,
-    LoogerComponent
+    LoogerComponent,
+    SimpleComponent
   ],
   imports: [
     BrowserModule,

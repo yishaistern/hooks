@@ -43,5 +43,5 @@ export const selectLog = (state: AppState) => state.log;
 export const selectFeature = createFeatureSelector<AppState, LogState>('log');
 export const selectFeatureCount = createSelector(
     selectFeature,
-      (state: LogState) => state
-    );
+    (state: LogState) => state
+);
