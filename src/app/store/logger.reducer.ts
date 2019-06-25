@@ -1,6 +1,7 @@
 import * as logActions from './logger.actions';
-import { Action, createReducer, on } from '@ngrx/store';
+import { Action, createReducer, on, createSelector, createFeatureSelector } from '@ngrx/store';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
+import { AppState, LogState } from './states';
 
 export interface State extends EntityState<logActions.LogItem> {
     // additional entities state properties
@@ -30,6 +31,17 @@ export const logReducer = createReducer(initialState,
     on(logActions.clearLog, (state, {}) => {
         return adapter.removeAll(state);
     }),
+    on(logActions.clearLogAndChngeTitle, (state, prop) => {
+        state.selectedLog = prop.tittle;
+        return adapter.removeAll(state);
+    }),
         on(logActions.addLog, (state, item: logActions.LogItem) => {
         return adapter.addOne(item, state);
     }));
+
+export const selectLog = (state: AppState) => state.log;
+export const selectFeature = createFeatureSelector<AppState, LogState>('log');
+export const selectFeatureCount = createSelector(
+    selectFeature,
+      (state: LogState) => state
+    );
