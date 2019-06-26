@@ -2,5 +2,8 @@
     <div *ngFor="let item of configArr">
         <button  type="button" class="btn btn-primary"><a routerLink="{{item.link}}" (click)="route(item.title)">{{item.title}}</a></button>
     </div>
+    <div>
+        <button  type="button" class="btn btn-warning" (click)="route(item.title)"><a>Clear Log</a></button>
+    </div>
 </header>
 <h1 class="bd-title">{{(state | async).selectedLog }}</h1>
