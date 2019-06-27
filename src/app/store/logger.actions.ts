@@ -10,8 +10,8 @@ export const clearLog = createAction(
 );
 
 export const clearLogAndChngeTitle = createAction(
-  '[Log Action] clear title',
-  props<{tittle: string}>()
+  '[Log Action] clear title or sub title',
+  props<{tittle?: string, subTitle?: string}>()
 );
 
 export const routePage = createAction(
@@ -19,13 +19,19 @@ export const routePage = createAction(
   props<{tittle: string}>()
 );
 
+export const newCase = createAction(
+  '[Log Action] new case',
+  props<{tittle: string}>()
+);
+
+
 export const createLog = createAction(
-  '[Log Action] add',
+  '[Log Action] create log',
   props<{console: string}>()
 );
 
 
 export const addLog = createAction(
-  '[Log Action] add',
+  '[Log Action] add log',
   props<LogItem>()
 );

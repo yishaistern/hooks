@@ -1,3 +1,5 @@
-<p>
-  looger works!
-</p>
+<div class="wrapper">
+  <div *ngFor="let item of (state | async).ids">
+    {{(state | async).entities[item].console}}
+  </div>
+</div>

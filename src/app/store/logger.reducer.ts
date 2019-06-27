@@ -6,6 +6,7 @@ import { AppState, LogState } from './states';
 export interface State extends EntityState<logActions.LogItem> {
     // additional entities state properties
     selectedLog: string | null;
+    case: string | null;
 }
 
 export function selectLogId(a: logActions.LogItem): number {
@@ -14,7 +15,7 @@ export function selectLogId(a: logActions.LogItem): number {
 }
 
 export function sortByTime(a: logActions.LogItem, b: logActions.LogItem): number {
-    return (a.timestamp + '').localeCompare(b.timestamp + '');
+    return ((a.timestamp + '').localeCompare(b.timestamp + ''));
   }
 
 export const adapter: EntityAdapter<logActions.LogItem> = createEntityAdapter<logActions.LogItem>({
@@ -25,6 +26,7 @@ export const adapter: EntityAdapter<logActions.LogItem> = createEntityAdapter<lo
 export const initialState: State = adapter.getInitialState({
     // additional entity state properties
     selectedLog: null,
+    case: null
  });
 
 export const logReducer = createReducer(initialState,
@@ -32,7 +34,8 @@ export const logReducer = createReducer(initialState,
         return adapter.removeAll(state);
     }),
     on(logActions.clearLogAndChngeTitle, (state, prop) => {
-        state.selectedLog = prop.tittle;
+        state.selectedLog = (prop.tittle) ? prop.tittle : state.selectedLog;
+        state.case = (prop.subTitle) ? prop.subTitle : state.case;
         return adapter.removeAll(state);
     }),
         on(logActions.addLog, (state, item: logActions.LogItem) => {

@@ -1,5 +1,5 @@
 <div class="wrapper">
-	<button type="button" class="btn btn-success" *ngFor="let item of componentsArr">{{item.case}}</button>
+	<button type="button" (click)="createComponent(item)" class="btn btn-success" *ngFor="let item of componentsArr">{{item.case}}</button>
 </div>
 <div>
     <ng-container  #container ></ng-container> 

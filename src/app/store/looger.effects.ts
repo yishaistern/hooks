@@ -12,6 +12,22 @@ export class LogEffects {
         })
         )
       );
+
+      newCAse$ = createEffect(() => this.actions$.pipe(
+        ofType('[Log Action] new case'),
+        map((action: any) => {
+            return (logActions.clearLogAndChngeTitle({ subTitle: action.tittle}));
+        })
+        )
+      );
+
+      addLog$ = createEffect(() => this.actions$.pipe(
+        ofType( '[Log Action] create log'),
+        map((action: any) => {
+            return (logActions.addLog({ console: action.console, timestamp: (new Date()).getTime()}));
+        })
+        )
+      );
       constructor(
         private actions$: Actions,
     ) {}

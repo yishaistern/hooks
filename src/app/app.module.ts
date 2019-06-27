@@ -13,6 +13,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { LogEffects } from './store/looger.effects';
 import { LoogerComponent } from './components/footer/looger/looger.component';
 import { SimpleComponent } from './components/options/init/simple/simple.component';
+import { ParentComponent } from './components/options/init/parent/parent/parent.component';
+import { SonComponent } from './components/options/init/parent/son/son.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,9 @@ import { SimpleComponent } from './components/options/init/simple/simple.compone
     InitComponent,
     ChangesComponent,
     LoogerComponent,
-    SimpleComponent
+    SimpleComponent,
+    ParentComponent,
+    SonComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +34,10 @@ import { SimpleComponent } from './components/options/init/simple/simple.compone
     StoreDevtoolsModule.instrument(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    SimpleComponent,
+    ParentComponent
+  ]
 })
 export class AppModule { }
