@@ -18,6 +18,10 @@ import { SonComponent } from './components/options/init/parent/son/son.component
 import { ParentForComponent } from './components/options/init/parentFor/parent-for.component';
 import { SonLopComponent } from './components/options/init/parentFor/son/son.component';
 import { SimpleChangesComponent } from './components/options/changes/simple-changes/simple-changes.component';
+import { SimpleParentComponent } from './components/options/changes/simple-parent/simple-parent.component';
+import { SimpleSonComponent } from './components/options/changes/simple-parent/simple-son/simple-son.component';
+import { ComplexParentComponent } from './components/options/changes/complex-parent/complex-parent.component';
+import { ComplexSonComponent } from './components/options/changes/complex-parent/complex-son/complex-son.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +34,11 @@ import { SimpleChangesComponent } from './components/options/changes/simple-chan
     SonComponent,
     ParentForComponent,
     SonLopComponent,
-    SimpleChangesComponent
+    SimpleChangesComponent,
+    SimpleParentComponent,
+    SimpleSonComponent,
+    ComplexParentComponent,
+    ComplexSonComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +53,9 @@ import { SimpleChangesComponent } from './components/options/changes/simple-chan
     SimpleComponent,
     ParentComponent,
     ParentForComponent,
-    SimpleChangesComponent
+    SimpleChangesComponent,
+    SimpleParentComponent,
+    ComplexParentComponent
   ]
 })
 export class AppModule { }
