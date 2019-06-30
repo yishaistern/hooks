@@ -12,12 +12,12 @@ import * as actions from '../../store/logger.actions';
 export class HeaderComponent implements OnInit {
   private subsciption: Subscription;
   private configArr = [
-    {title: 'onInit', link: '/init'},
+    {title: 'onInit', link: '/onInit'},
     {title: 'b', link: '/b'},
     {title: 'c', link: '/b'},
-    {title: 'onChanges', link: '/change'},
+    {title: 'onChanges', link: '/onChanges'},
     {title: 'e', link: '/b'},
-    {title: 'f', link: '/b'},
+    {title: 'doCheck', link: '/doCheck'},
     {title: 'g', link: '/b'},
     {title: 'h', link: '/b'},
   ];

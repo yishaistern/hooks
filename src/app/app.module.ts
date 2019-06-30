@@ -24,6 +24,9 @@ import { ComplexParentComponent } from './components/options/changes/complex-par
 import { ComplexSonComponent } from './components/options/changes/complex-parent/complex-son/complex-son.component';
 import { ComplexInteractionComponent } from './components/options/changes/complex-interaction/complex-interaction.component';
 import { InteractionSonComponent } from './components/options/changes/complex-interaction/interaction-son/interaction-son.component';
+import { DoCheckComponent } from './components/options/do-check/do-check.component';
+import { SimpleCheckComponent } from './components/options/do-check/simple-check/simple-check.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +45,9 @@ import { InteractionSonComponent } from './components/options/changes/complex-in
     ComplexParentComponent,
     ComplexSonComponent,
     ComplexInteractionComponent,
-    InteractionSonComponent
+    InteractionSonComponent,
+    DoCheckComponent,
+    SimpleCheckComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +55,7 @@ import { InteractionSonComponent } from './components/options/changes/complex-in
     StoreModule.forRoot({ log: logReducer }),
     EffectsModule.forRoot([LogEffects]),
     StoreDevtoolsModule.instrument(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -61,7 +67,7 @@ import { InteractionSonComponent } from './components/options/changes/complex-in
     SimpleParentComponent,
     ComplexParentComponent,
     ComplexInteractionComponent,
-    ComplexInteractionComponent
-  ]
+    SimpleCheckComponent,
+  ],
 })
 export class AppModule { }
