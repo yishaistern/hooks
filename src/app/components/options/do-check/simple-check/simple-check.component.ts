@@ -9,8 +9,7 @@ import * as actions from '../../../../store/logger.actions';
   styleUrls: ['./simple-check.component.scss']
 })
 export class SimpleCheckComponent implements OnInit, DoCheck {
-  cc = 14;
-  hero = "qq";
+  
   constructor(private store: Store<LogState>) {
     console.log('constructor of SimpleCheckComponent');
     this.store.dispatch(actions.createLog({console: 'constructor of SimpleCheckComponent'}));
@@ -19,7 +18,7 @@ export class SimpleCheckComponent implements OnInit, DoCheck {
   ngOnInit() {
     console.log('init of SimpleCheckComponent');
     this.store.dispatch(actions.createLog({console: 'init of SimpleCheckComponent'}));
-    this.cc = 18;
+    
   }
 
   ngDoCheck() {
