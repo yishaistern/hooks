@@ -10,12 +10,10 @@ import * as actions from '../../../../../store/logger.actions';
 export class ParentComponent implements OnInit {
 
   constructor(private store: Store<LogState>) {
-    console.log(1);
     this.store.dispatch(actions.createLog({console: 'constructor of ParentComponent'}));
    }
 
   ngOnInit() {
-    console.log(2);
     this.store.dispatch(actions.createLog({console: 'ngOnInit of ParentComponent'}));
   }
 

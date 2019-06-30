@@ -6,6 +6,7 @@ import { SimpleComponent } from './simple/simple.component';
 import { CreateComponentsService } from '../../../services/create-components/create-components.service';
 import * as actions from '../../../store/logger.actions';
 import { ParentComponent } from './parent/parent/parent.component';
+import { ParentForComponent } from './parentFor/parent-for.component';
 @Component({
   selector: 'app-init',
   templateUrl: './init.component.html',
@@ -20,6 +21,9 @@ export class InitComponent implements OnInit {
     }, {
       case: 'Prent',
       component: ParentComponent,
+    }, {
+      case: 'Parent loop',
+      component: ParentForComponent
     }
   ];
   constructor(private store: Store<LogState>, private componetCreator: CreateComponentsService) { }

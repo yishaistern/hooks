@@ -15,6 +15,8 @@ import { LoogerComponent } from './components/footer/looger/looger.component';
 import { SimpleComponent } from './components/options/init/simple/simple.component';
 import { ParentComponent } from './components/options/init/parent/parent/parent.component';
 import { SonComponent } from './components/options/init/parent/son/son.component';
+import { ParentForComponent } from './components/options/init/parentFor/parent-for.component';
+import { SonLopComponent } from './components/options/init/parentFor/son/son.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,9 @@ import { SonComponent } from './components/options/init/parent/son/son.component
     LoogerComponent,
     SimpleComponent,
     ParentComponent,
-    SonComponent
+    SonComponent,
+    ParentForComponent,
+    SonLopComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,8 @@ import { SonComponent } from './components/options/init/parent/son/son.component
   bootstrap: [AppComponent],
   entryComponents: [
     SimpleComponent,
-    ParentComponent
+    ParentComponent,
+    ParentForComponent
   ]
 })
 export class AppModule { }
