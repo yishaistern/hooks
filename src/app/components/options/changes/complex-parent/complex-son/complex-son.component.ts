@@ -10,19 +10,20 @@ import * as actions from '../../../../../store/logger.actions';
 })
 export class ComplexSonComponent implements OnInit, OnChanges {
   @Input() myNum: number;
+
   constructor(private store: Store<LogState>) {
-    this.store.dispatch(actions.createLog({console: 'constructor of SimpleSonComponent'}));
+    this.store.dispatch(actions.createLog({console: 'constructor of ComplexSonComponent'}));
   }
 
   ngOnInit() {
-    console.log('init of SimpleSonComponent');
-    this.store.dispatch(actions.createLog({console: 'init of SimpleSonComponent'}));
+    console.log('init of ComplexSonComponent');
+    this.store.dispatch(actions.createLog({console: 'init of ComplexSonComponent'}));
     setTimeout(() => {
       this.myNum = 15;
     }, 1000);
   }
   ngOnChanges(changes: SimpleChanges) {
-    console.log('SimpleSonComponent', changes);
-    this.store.dispatch(actions.createLog({console: 'on changes of SimpleSonComponent'}));
+    console.log('ComplexSonComponent', changes);
+    this.store.dispatch(actions.createLog({console: 'on changes of ComplexSonComponent'}));
   }
 }

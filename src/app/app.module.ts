@@ -22,6 +22,8 @@ import { SimpleParentComponent } from './components/options/changes/simple-paren
 import { SimpleSonComponent } from './components/options/changes/simple-parent/simple-son/simple-son.component';
 import { ComplexParentComponent } from './components/options/changes/complex-parent/complex-parent.component';
 import { ComplexSonComponent } from './components/options/changes/complex-parent/complex-son/complex-son.component';
+import { ComplexInteractionComponent } from './components/options/changes/complex-interaction/complex-interaction.component';
+import { InteractionSonComponent } from './components/options/changes/complex-interaction/interaction-son/interaction-son.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,9 @@ import { ComplexSonComponent } from './components/options/changes/complex-parent
     SimpleParentComponent,
     SimpleSonComponent,
     ComplexParentComponent,
-    ComplexSonComponent
+    ComplexSonComponent,
+    ComplexInteractionComponent,
+    InteractionSonComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,9 @@ import { ComplexSonComponent } from './components/options/changes/complex-parent
     ParentForComponent,
     SimpleChangesComponent,
     SimpleParentComponent,
-    ComplexParentComponent
+    ComplexParentComponent,
+    ComplexInteractionComponent,
+    ComplexInteractionComponent
   ]
 })
 export class AppModule { }

@@ -7,6 +7,7 @@ import * as actions from '../../../store/logger.actions';
 import { SimpleChangesComponent } from './simple-changes/simple-changes.component';
 import { SimpleParentComponent } from './simple-parent/simple-parent.component';
 import { ComplexParentComponent } from './complex-parent/complex-parent.component';
+import { ComplexInteractionComponent } from './complex-interaction/complex-interaction.component';
 
 @Component({
   selector: 'app-changes',
@@ -24,6 +25,9 @@ export class ChangesComponent implements OnInit {
     }, {
       case: 'complex parent',
       component: ComplexParentComponent
+    }, {
+      case: 'complex inteaction',
+      component: ComplexInteractionComponent
     }
   ];
   @ViewChild('container', {read: ViewContainerRef}) container: ViewContainerRef;
