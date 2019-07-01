@@ -10,10 +10,9 @@ import * as actions from '../../store/logger.actions';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  private subsciption: Subscription;
   private configArr = [
     {title: 'onInit', link: '/onInit'},
-    {title: 'afterView', link: '/afterView'},
+    {title: 'View/Content ', link: '/afterView'},
     {title: 'onChanges', link: '/onChanges'},
     {title: 'doCheck', link: '/doCheck'},
   ];
