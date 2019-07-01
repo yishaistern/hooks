@@ -33,6 +33,13 @@ import { SonCheckComponent } from './components/options/do-check/parent-check/so
 import { ParentResizeCheckComponent } from './components/options/do-check/parent-resize-check/parent-resize-check.component';
 import { BrotherCheckComponent } from './components/options/do-check/parent-check/brother-check/brother-check.component';
 import { AngularDraggableModule } from 'angular2-draggable';
+import { NgDragDropModule } from 'ng-drag-drop';
+import { AfterViewComponent } from './components/options/after-view/after-view.component';
+import { SimpleAfterComponent } from './components/options/after-view/simple-after/simple-after.component';
+import { ParentAfterComponent } from './components/options/after-view/parent-after/parent-after.component';
+import { ParentCreateAfterComponent } from './components/options/after-view/parent-create-after/parent-create-after.component';
+import { SonAfterComponent } from './components/options/after-view/parent-after/son-after/son-after.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +66,11 @@ import { AngularDraggableModule } from 'angular2-draggable';
     SonCheckComponent,
     ParentResizeCheckComponent,
     BrotherCheckComponent,
+    AfterViewComponent,
+    SimpleAfterComponent,
+    ParentAfterComponent,
+    ParentCreateAfterComponent,
+    SonAfterComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,6 +78,7 @@ import { AngularDraggableModule } from 'angular2-draggable';
     StoreModule.forRoot({ log: logReducer }),
     EffectsModule.forRoot([LogEffects]),
     StoreDevtoolsModule.instrument(),
+    NgDragDropModule.forRoot(),
     AngularDraggableModule,
     FormsModule
   ],
@@ -81,7 +94,10 @@ import { AngularDraggableModule } from 'angular2-draggable';
     ComplexInteractionComponent,
     SimpleCheckComponent,
     ParentCheckComponent,
-    ResizeCheckComponent
+    ResizeCheckComponent,
+    SimpleAfterComponent,
+    ParentAfterComponent,
+    ParentCreateAfterComponent
   ],
 })
 export class AppModule { }

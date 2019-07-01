@@ -14,12 +14,9 @@ export class HeaderComponent implements OnInit {
   private configArr = [
     {title: 'onInit', link: '/onInit'},
     {title: 'b', link: '/b'},
-    {title: 'c', link: '/b'},
+    {title: 'afterView', link: '/afterView'},
     {title: 'onChanges', link: '/onChanges'},
-    {title: 'e', link: '/b'},
     {title: 'doCheck', link: '/doCheck'},
-    {title: 'g', link: '/b'},
-    {title: 'h', link: '/b'},
   ];
   constructor( private store: Store<AppState>) { }
 
