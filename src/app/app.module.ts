@@ -27,6 +27,10 @@ import { InteractionSonComponent } from './components/options/changes/complex-in
 import { DoCheckComponent } from './components/options/do-check/do-check.component';
 import { SimpleCheckComponent } from './components/options/do-check/simple-check/simple-check.component';
 import { FormsModule } from '@angular/forms';
+import { ParentCheckComponent } from './components/options/do-check/parent-check/parent-check.component';
+import { ResizeCheckComponent } from './components/options/do-check/resize-check/resize-check.component';
+import { SonCheckComponent } from './components/options/do-check/parent-check/son-check/son-check.component';
+import { ParentResizeCheckComponent } from './components/options/do-check/parent-resize-check/parent-resize-check.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +52,10 @@ import { FormsModule } from '@angular/forms';
     InteractionSonComponent,
     DoCheckComponent,
     SimpleCheckComponent,
+    ParentCheckComponent,
+    ResizeCheckComponent,
+    SonCheckComponent,
+    ParentResizeCheckComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,6 +76,8 @@ import { FormsModule } from '@angular/forms';
     ComplexParentComponent,
     ComplexInteractionComponent,
     SimpleCheckComponent,
+    ParentCheckComponent,
+    ResizeCheckComponent
   ],
 })
 export class AppModule { }

@@ -1,14 +1,14 @@
-import { Component, OnInit,  DoCheck, KeyValueDiffers } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, Input, KeyValueDiffers, DoCheck } from '@angular/core';
 import { LogState } from '../../../../store/states';
 import { Store } from '@ngrx/store';
 import * as actions from '../../../../store/logger.actions';
 
 @Component({
-  selector: 'app-simple-check',
-  templateUrl: './simple-check.component.html',
-  styleUrls: ['./simple-check.component.scss']
+  selector: 'app-parent-check',
+  templateUrl: './parent-check.component.html',
+  styleUrls: ['./parent-check.component.scss']
 })
-export class SimpleCheckComponent implements OnInit, DoCheck {
+export class ParentCheckComponent implements OnInit, DoCheck {
   differ: any = {};
   myCompany = {
     a: 6
@@ -16,22 +16,18 @@ export class SimpleCheckComponent implements OnInit, DoCheck {
   constructor(private store: Store<LogState>, private differs: KeyValueDiffers) {
     console.log('constructor of SimpleCheckComponent');
     this.differ = this.differs.find(this.myCompany).create();
-    this.store.dispatch(actions.createLog({console: 'constructor of SimpleCheckComponent'}));
+    this.store.dispatch(actions.createLog({console: 'constructor of SonCheckComponent'}));
   }
 
   ngOnInit() {
-    console.log('init of SimpleCheckComponent');
-    this.store.dispatch(actions.createLog({console: 'init of SimpleCheckComponent'}));
+    console.log('init of SonCheckComponent');
+    this.store.dispatch(actions.createLog({console: 'init of SonCheckComponent'}));
     setTimeout(() => {
       this.myCompany = {
         a: 5
       };
     }, 3000);
-    setTimeout(() => {
-      this.myCompany.a = 18;
-    }, 5000);
   }
-
   ngDoCheck() {
     console.log('DoCheck of SimpleCheckComponent');
     const customerChanges = this.differ.diff(this.myCompany);
@@ -40,6 +36,4 @@ export class SimpleCheckComponent implements OnInit, DoCheck {
       this.store.dispatch(actions.createLog({console: 'DoCheck after change SimpleCheckComponent'}));
     }
   }
-
 }
-
