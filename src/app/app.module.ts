@@ -31,6 +31,8 @@ import { ParentCheckComponent } from './components/options/do-check/parent-check
 import { ResizeCheckComponent } from './components/options/do-check/resize-check/resize-check.component';
 import { SonCheckComponent } from './components/options/do-check/parent-check/son-check/son-check.component';
 import { ParentResizeCheckComponent } from './components/options/do-check/parent-resize-check/parent-resize-check.component';
+import { BrotherCheckComponent } from './components/options/do-check/parent-check/brother-check/brother-check.component';
+import { AngularDraggableModule } from 'angular2-draggable';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +58,7 @@ import { ParentResizeCheckComponent } from './components/options/do-check/parent
     ResizeCheckComponent,
     SonCheckComponent,
     ParentResizeCheckComponent,
+    BrotherCheckComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +66,7 @@ import { ParentResizeCheckComponent } from './components/options/do-check/parent
     StoreModule.forRoot({ log: logReducer }),
     EffectsModule.forRoot([LogEffects]),
     StoreDevtoolsModule.instrument(),
+    AngularDraggableModule,
     FormsModule
   ],
   providers: [],
