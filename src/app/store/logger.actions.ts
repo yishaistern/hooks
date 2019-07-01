@@ -9,6 +9,10 @@ export const clearLog = createAction(
   '[Log Action] clear'
 );
 
+export const clearAll = createAction(
+  '[Log Action] clear All'
+);
+
 export const clearLogAndChngeTitle = createAction(
   '[Log Action] clear title or sub title',
   props<{tittle?: string, subTitle?: string}>()

@@ -13,7 +13,6 @@ export class HeaderComponent implements OnInit {
   private subsciption: Subscription;
   private configArr = [
     {title: 'onInit', link: '/onInit'},
-    {title: 'b', link: '/b'},
     {title: 'afterView', link: '/afterView'},
     {title: 'onChanges', link: '/onChanges'},
     {title: 'doCheck', link: '/doCheck'},
@@ -27,6 +26,11 @@ export class HeaderComponent implements OnInit {
 
   route(link) {
     this.store.dispatch(actions.routePage({tittle: link}));
+  }
+
+  clear() {
+    this.store.dispatch(actions.clearLog());
+    this.store.dispatch(actions.clearAll());
   }
 
 }

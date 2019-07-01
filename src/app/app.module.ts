@@ -97,7 +97,8 @@ import { SonAfterComponent } from './components/options/after-view/parent-after/
     ResizeCheckComponent,
     SimpleAfterComponent,
     ParentAfterComponent,
-    ParentCreateAfterComponent
+    ParentCreateAfterComponent,
+    SonAfterComponent
   ],
 })
 export class AppModule { }

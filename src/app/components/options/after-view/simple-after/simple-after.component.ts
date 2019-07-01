@@ -11,11 +11,14 @@ import * as actions from '../../../../store/logger.actions';
 export class SimpleAfterComponent implements OnInit,  AfterViewChecked, AfterViewInit, DoCheck {
   b = 'a';
   showImg = true;
+  ff = null;
+  arr = [];
   constructor(private store: Store<LogState>) {
     this.store.dispatch(actions.createLog({console: 'constructor of SimpleAfterComponent'}));
   }
 
   ngOnInit() {
+    console.log(document.getElementsByClassName('dd'));
     console.log('ngOnInit of SimpleAfterComponent');
     this.store.dispatch(actions.createLog({console: 'ngOnInit of SimpleAfterComponent'}));
     setTimeout(() => {
@@ -25,12 +28,16 @@ export class SimpleAfterComponent implements OnInit,  AfterViewChecked, AfterVie
   ngAfterViewChecked() {
     console.log('ngAfterViewChecked of SimpleAfterComponent');
     this.store.dispatch(actions.createLog({console: 'ngAfterViewChecked of SimpleAfterComponent'}));
-    
+    console.log(document.getElementsByClassName('dd'));
+
   }
 
   ngAfterViewInit() {
+    
+    this.arr.push(2);
     console.log('ngAfterViewInit of SimpleAfterComponent');
     this.store.dispatch(actions.createLog({console: 'ngAfterViewInit of SimpleAfterComponent'}));
+    console.log(document.getElementsByClassName('dd'));
   }
 
   ngDoCheck() {

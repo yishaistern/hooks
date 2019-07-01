@@ -38,6 +38,11 @@ export const logReducer = createReducer(initialState,
         state.case = (prop.subTitle) ? prop.subTitle : state.case;
         return adapter.removeAll(state);
     }),
+    on(logActions.clearAll, (state, item) => {
+        state.selectedLog = '';
+        state.case = '';
+        return adapter.removeAll(state);
+    }),
         on(logActions.addLog, (state, item: logActions.LogItem) => {
         return adapter.addOne(item, state);
     }));
