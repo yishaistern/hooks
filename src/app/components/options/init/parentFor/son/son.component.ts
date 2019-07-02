@@ -10,10 +10,12 @@ import * as actions from '../../../../../store/logger.actions';
 export class SonLopComponent implements OnInit {
   @Input() index: number;
   constructor(private store: Store<LogState>) {
+    console.log('constructor of SonComponent');
     this.store.dispatch(actions.createLog({console: 'constructor of SonComponent ' + this.index}));
    }
 
   ngOnInit() {
+    console.log('ngOnInit of SonComponent');
     this.store.dispatch(actions.createLog({console: 'ngOnInit of SonComponent ' + this.index}));
   }
 

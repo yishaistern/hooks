@@ -11,6 +11,7 @@ import * as actions from '../../../../../store/logger.actions';
 export class SimpleSonComponent implements OnInit, OnChanges {
   @Input() myNum: number;
   constructor(private store: Store<LogState>) {
+    console.log('constructor of SimpleSonComponent');
     this.store.dispatch(actions.createLog({console: 'constructor of SimpleSonComponent'}));
   }
 

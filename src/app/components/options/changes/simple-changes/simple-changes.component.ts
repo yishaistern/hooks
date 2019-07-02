@@ -10,13 +10,16 @@ import * as actions from '../../../../store/logger.actions';
 export class SimpleChangesComponent implements OnInit, OnChanges {
 
   constructor(private store: Store<LogState>) {
+    console.log('constructor of SimpleChangesComponent');
     this.store.dispatch(actions.createLog({console: 'constructor of SimpleChangesComponent'}));
   }
 
   ngOnInit() {
+    console.log('constructor of SimpleChangesComponent');
     this.store.dispatch(actions.createLog({console: 'init of SimpleChangesComponent'}));
   }
   ngOnChanges(changes: SimpleChanges) {
-    this.store.dispatch(actions.createLog({console: 'on init of SimpleChangesComponent'}));
+    console.log('constructor of SimpleChangesComponent');
+    this.store.dispatch(actions.createLog({console: 'ngOnChanges of SimpleChangesComponent'}));
   }
 }

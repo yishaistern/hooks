@@ -10,6 +10,7 @@ import * as actions from '../../../../store/logger.actions';
 export class SimpleParentComponent implements OnInit, OnChanges {
 
   constructor(private store: Store<LogState>) {
+    console.log('constructor of SimpleParentComponent');
     this.store.dispatch(actions.createLog({console: 'constructor of SimpleParentComponent'}));
   }
 

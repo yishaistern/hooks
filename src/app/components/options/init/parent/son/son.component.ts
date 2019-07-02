@@ -10,10 +10,12 @@ import * as actions from '../../../../../store/logger.actions';
 export class SonComponent implements OnInit {
 
   constructor(private store: Store<LogState>) {
+    console.log('constructor of SonComponent');
     this.store.dispatch(actions.createLog({console: 'constructor of SonComponent'}));
    }
 
   ngOnInit() {
+    console.log('ngOnInit of SonComponent');
     this.store.dispatch(actions.createLog({console: 'ngOnInit of SonComponent'}));
   }
 

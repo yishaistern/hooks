@@ -9,7 +9,10 @@ export class CreateComponentsService {
 
   newComponent(component: any, container: ViewContainerRef) {
     container.clear();
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(component);
-    const newComponent = container.createComponent(componentFactory);
+    console.clear();
+    setTimeout(() => {
+      const componentFactory = this.componentFactoryResolver.resolveComponentFactory(component);
+      const newComponent = container.createComponent(componentFactory); 
+    }, 400);
   }
 }
