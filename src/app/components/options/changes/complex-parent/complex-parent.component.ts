@@ -10,6 +10,7 @@ import * as actions from '../../../../store/logger.actions';
 export class ComplexParentComponent implements OnInit, OnChanges {
   myNum = 10;
   constructor(private store: Store<LogState>) {
+    console.log('constructor of ComplexParentComponent');
     this.store.dispatch(actions.createLog({console: 'constructor of ComplexParentComponent'}));
   }
 
@@ -18,7 +19,7 @@ export class ComplexParentComponent implements OnInit, OnChanges {
     this.store.dispatch(actions.createLog({console: 'init of ComplexParentComponent'}));
     setTimeout(() => {
       this.myNum = 25;
-    }, 5000);
+    }, 3000);
   }
   ngOnChanges(changes: SimpleChanges) {
     console.log('ComplexParentComponent', changes);

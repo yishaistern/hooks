@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit {
   }
 
   clear() {
-    this.store.dispatch(actions.clearLog());
+    console.clear();
     this.store.dispatch(actions.clearAll());
   }
 

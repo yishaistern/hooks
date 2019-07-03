@@ -36,7 +36,7 @@ export class SimpleCheckComponent implements OnInit, DoCheck {
     console.log('DoCheck of SimpleCheckComponent');
     const customerChanges = this.differ.diff(this.myCompany);
     if (customerChanges) {
-      console.log(this.myCompany);
+      // console.log(this.myCompany);
       this.store.dispatch(actions.createLog({console: 'DoCheck after change SimpleCheckComponent'}));
     }
   }

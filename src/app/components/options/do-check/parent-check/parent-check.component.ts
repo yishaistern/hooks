@@ -14,14 +14,14 @@ export class ParentCheckComponent implements OnInit, DoCheck {
     a: 6
   };
   constructor(private store: Store<LogState>, private differs: KeyValueDiffers) {
-    console.log('constructor of SimpleCheckComponent');
+    console.log('constructor of ParentCheckComponent');
     this.differ = this.differs.find(this.myCompany).create();
-    this.store.dispatch(actions.createLog({console: 'constructor of SonCheckComponent'}));
+    this.store.dispatch(actions.createLog({console: 'constructor of ParentCheckComponent'}));
   }
 
   ngOnInit() {
-    console.log('init of SonCheckComponent');
-    this.store.dispatch(actions.createLog({console: 'init of SonCheckComponent'}));
+    console.log('init of ParentCheckComponent');
+    this.store.dispatch(actions.createLog({console: 'init of ParentCheckComponent'}));
     setTimeout(() => {
       this.myCompany = {
         a: 5

@@ -12,7 +12,7 @@ export class CreateComponentsService {
     console.clear();
     setTimeout(() => {
       const componentFactory = this.componentFactoryResolver.resolveComponentFactory(component);
-      const newComponent = container.createComponent(componentFactory); 
+      const newComponent = container.createComponent(componentFactory);
     }, 400);
   }
 }

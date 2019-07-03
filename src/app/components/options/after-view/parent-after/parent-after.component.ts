@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, AfterViewChecked, DoCheck, ViewContainerRef, 
+import { Component, OnInit, AfterViewInit, AfterViewChecked, DoCheck, ViewContainerRef,
   ViewChild, AfterContentInit, AfterContentChecked } from '@angular/core';
 import { LogState } from '../../../../store/states';
 import { Store } from '@ngrx/store';
@@ -12,27 +12,27 @@ import { SonAfterComponent } from './son-after/son-after.component';
   styleUrls: ['./parent-after.component.scss']
 })
 export class ParentAfterComponent implements OnInit,  AfterViewChecked, AfterViewInit, DoCheck, AfterContentChecked, AfterContentInit {
-  b = 'a';
-  showImg = false;
+
   @ViewChild('container', {read: ViewContainerRef}) container: ViewContainerRef;
   constructor(private store: Store<LogState>, private componetCreator: CreateComponentsService) {
-    this.store.dispatch(actions.createLog({console: 'constructor of ParentAfterComponent'}));
+    // this.store.dispatch(actions.createLog({console: 'constructor of ParentAfterComponent'}));
+    console.log('constructor of ParentAfterComponent');
   }
 
   ngOnInit() {
-    this.componetCreator.newComponent(SonAfterComponent, this.container);
+    // this.componetCreator.newComponent(SonAfterComponent, this.container);
     console.log('ngOnInit of ParentAfterComponent');
-    this.store.dispatch(actions.createLog({console: 'ngOnInit of ParentAfterComponent'}));
+    // this.store.dispatch(actions.createLog({console: 'ngOnInit of ParentAfterComponent'}));
 
   }
   ngAfterViewChecked() {
     console.log('ngAfterViewChecked of ParentAfterComponent');
-    this.store.dispatch(actions.createLog({console: 'ngAfterViewChecked of ParentAfterComponent'}));
+    // this.store.dispatch(actions.createLog({console: 'ngAfterViewChecked of ParentAfterComponent'}));
   }
 
   ngAfterViewInit() {
     console.log('ngAfterViewInit of ParentAfterComponent');
-    this.store.dispatch(actions.createLog({console: 'ngAfterViewInit of ParentAfterComponent'}));
+    // this.store.dispatch(actions.createLog({console: 'ngAfterViewInit of ParentAfterComponent'}));
   }
 
   ngDoCheck() {
@@ -43,11 +43,11 @@ export class ParentAfterComponent implements OnInit,  AfterViewChecked, AfterVie
     this.store.dispatch(actions.createLog({console: 'load img of ParentAfterComponent'}));
   }
   ngAfterContentChecked() {
-    this.store.dispatch(actions.createLog({console: 'ngAfterContentChecked of ParentAfterComponent'}));
+    // this.store.dispatch(actions.createLog({console: 'ngAfterContentChecked of ParentAfterComponent'}));
     console.log('ngAfterContentChecked of ParentAfterComponent');
   }
   ngAfterContentInit() {
-    this.store.dispatch(actions.createLog({console: 'ngAfterContentInit of ParentAfterComponent'}));
+    // this.store.dispatch(actions.createLog({console: 'ngAfterContentInit of ParentAfterComponent'}));
     console.log('ngAfterContentInit of ParentAfterComponent');
   }
 }

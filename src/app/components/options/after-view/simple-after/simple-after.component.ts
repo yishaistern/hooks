@@ -14,29 +14,28 @@ export class SimpleAfterComponent implements OnInit,  AfterViewChecked, AfterVie
   ff = null;
   arr = [];
   constructor(private store: Store<LogState>) {
-    this.store.dispatch(actions.createLog({console: 'constructor of SimpleAfterComponent'}));
+    // this.store.dispatch(actions.createLog({console: 'constructor of SimpleAfterComponent'}));
   }
 
   ngOnInit() {
     console.log(document.getElementsByClassName('dd'));
     console.log('ngOnInit of SimpleAfterComponent');
-    this.store.dispatch(actions.createLog({console: 'ngOnInit of SimpleAfterComponent'}));
+    // this.store.dispatch(actions.createLog({console: 'ngOnInit of SimpleAfterComponent'}));
     setTimeout(() => {
       this.showImg = false;
     }, 4000);
   }
   ngAfterViewChecked() {
     console.log('ngAfterViewChecked of SimpleAfterComponent');
-    this.store.dispatch(actions.createLog({console: 'ngAfterViewChecked of SimpleAfterComponent'}));
+    // this.store.dispatch(actions.createLog({console: 'ngAfterViewChecked of SimpleAfterComponent'}));
     console.log(document.getElementsByClassName('dd'));
 
   }
 
   ngAfterViewInit() {
-    
     this.arr.push(2);
     console.log('ngAfterViewInit of SimpleAfterComponent');
-    this.store.dispatch(actions.createLog({console: 'ngAfterViewInit of SimpleAfterComponent'}));
+    // this.store.dispatch(actions.createLog({console: 'ngAfterViewInit of SimpleAfterComponent'}));
     console.log(document.getElementsByClassName('dd'));
   }
 
@@ -45,6 +44,6 @@ export class SimpleAfterComponent implements OnInit,  AfterViewChecked, AfterVie
   }
 
   load() {
-    this.store.dispatch(actions.createLog({console: 'load img of SimpleAfterComponent'}));
+    // this.store.dispatch(actions.createLog({console: 'load img of SimpleAfterComponent'}));
   }
 }

@@ -1,4 +1,4 @@
-<p *ngIf="b=='h'">
+<p *ngIf="!(b=='h')" id="first">
   parent-after works!
 </p>
 <input type="text"  [(ngModel)]="b"/>
@@ -8,5 +8,6 @@
 <app-son-after></app-son-after>
 <div *ngIf="b=='h'" >second son</div>
 <div>
+  <!---->
   <ng-container  #container ></ng-container> 
 </div>

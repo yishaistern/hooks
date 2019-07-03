@@ -12,6 +12,7 @@ export class ComplexInteractionComponent implements OnInit, OnChanges {
   myNum = 10;
   myFlag = false;
   constructor(private store: Store<LogState>) {
+    console.log('constructor of ComplexInteractionComponent');
     this.store.dispatch(actions.createLog({console: 'constructor of ComplexInteractionComponent'}));
   }
 
@@ -20,7 +21,7 @@ export class ComplexInteractionComponent implements OnInit, OnChanges {
     this.store.dispatch(actions.createLog({console: 'init of ComplexInteractionComponent'}));
     setTimeout(() => {
       this.myNum = 25;
-    }, 5000);
+    }, 3500);
     setTimeout(() => {
       this.myFlag = true;
     }, 3000);
